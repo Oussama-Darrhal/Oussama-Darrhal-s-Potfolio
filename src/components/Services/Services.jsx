@@ -59,7 +59,7 @@ export const Services = () => {
             ref={ref}
             animate={isInView && "animate"}
         >
-            <motion.div className="textContainer" variants={variants}>
+            <motion.div className="textContainer " variants={variants}>
                 <p>
                     I Translate Complex Technical Challenges<br />
                     Into Elegant, Efficient Solutions.

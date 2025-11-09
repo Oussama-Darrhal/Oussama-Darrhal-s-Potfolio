@@ -9,6 +9,7 @@
     @include mobile {
         opacity: 1 !important; 
         transform: translateX(0px) translateY(0px) translateZ(0px) !important;
+        justify-content: space-evenly;
     }
 
     .textContainer {
@@ -19,9 +20,7 @@
         gap: 20px;
 
         @include mobile {
-            align-self: center;
-            text-align: center;
-            flex-direction: column;
+            display: none;
         }
 
         p {
@@ -47,6 +46,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        justify-content: center;
 
         @include mobile {
             width: 100%;
@@ -131,51 +131,35 @@
         max-width: 1400px;
         margin: 0 auto;
 
-        @include mobile {
-            flex-direction: column;
-            padding: 20px 10px;
-            gap: 20px;
-        }
-
         @media (max-width: 768px) {
             flex-wrap: nowrap;
             flex-direction: row;
             overflow-x: auto;
             overflow-y: hidden;
             scroll-snap-type: x mandatory;
+            scroll-snap-stop: always;
             -webkit-overflow-scrolling: touch;
-            scrollbar-width: thin;
-            scrollbar-color: rgba(255, 165, 0, 0.3) transparent;
-            padding: 20px 0;
+            scrollbar-width: none; // Hide scrollbar for cleaner look
+            -ms-overflow-style: none; // Hide scrollbar in IE/Edge
+            padding: 20px 0 60px 0; // Extra bottom padding for pagination dots
             gap: 20px;
             justify-content: flex-start;
             align-items: stretch;
+            width: 100%;
+            position: relative;
+
+            // Hide scrollbar in webkit browsers
+            &::-webkit-scrollbar {
+                display: none;
+            }
 
             // Add padding to first and last child for better edge visibility
             & > .pillar:first-child {
-                margin-left: 20px;
+                margin-left: 7.5vw; // Center the first pillar with 7.5vw on each side
             }
 
             & > .pillar:last-child {
-                margin-right: 20px;
-            }
-
-            // Custom scrollbar styling for webkit browsers
-            &::-webkit-scrollbar {
-                height: 6px;
-            }
-
-            &::-webkit-scrollbar-track {
-                background: transparent;
-            }
-
-            &::-webkit-scrollbar-thumb {
-                background: rgba(255, 165, 0, 0.3);
-                border-radius: 3px;
-
-                &:hover {
-                    background: rgba(255, 165, 0, 0.5);
-                }
+                margin-right: 7.5vw; // Center the last pillar with 7.5vw on each side
             }
         }
 
@@ -196,20 +180,19 @@
             transition: all 0.3s ease;
             backdrop-filter: blur(10px);
 
-            @include mobile {
-                min-width: 100%;
-                max-width: 100%;
-                padding: 25px;
-            }
-
             @media (max-width: 768px) {
-                flex: 0 0 auto;
+                flex: 0 0 85vw;
                 min-width: 85vw;
                 max-width: 85vw;
                 width: 85vw;
                 scroll-snap-align: center;
+                scroll-snap-stop: always;
                 margin-right: 0;
                 padding: 25px 20px;
+                height: 100%;
+                min-height: 100%;
+                display: flex;
+                flex-direction: column;
             }
 
             // Subtle glow effect on hover
@@ -231,6 +214,8 @@
                 -webkit-mask: linear-gradient(#fff 0 0) content-box,
                     linear-gradient(#fff 0 0);
                 -webkit-mask-composite: xor;
+                mask: linear-gradient(#fff 0 0) content-box,
+                    linear-gradient(#fff 0 0);
                 mask-composite: exclude;
                 opacity: 0;
                 transition: opacity 0.3s ease;
@@ -276,6 +261,7 @@
                 display: flex;
                 flex-direction: column;
                 gap: 18px;
+                flex: 1;
 
                 li {
                     color: lightgray;
@@ -311,6 +297,69 @@
                         font-weight: 500;
                         margin-right: 5px;
                     }
+                }
+            }
+        }
+    }
+
+    .paginationDots {
+        display: none; // Hidden on desktop
+
+        @media (max-width: 768px) {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 12px;
+            padding: 20px 0;
+            margin-top: 10px;
+
+            .paginationDot {
+                width: 10px;
+                height: 10px;
+                border-radius: 50%;
+                border: none;
+                background-color: rgba(255, 255, 255, 0.3);
+                cursor: pointer;
+                transition: all 0.3s ease;
+                padding: 0;
+                outline: none;
+                position: relative;
+
+                &:hover {
+                    background-color: rgba(255, 165, 0, 0.6);
+                    transform: scale(1.2);
+                }
+
+                &:active {
+                    transform: scale(0.95);
+                }
+
+                &.active {
+                    background-color: orange;
+                    width: 12px;
+                    height: 12px;
+                    box-shadow: 0 0 8px rgba(255, 165, 0, 0.5);
+                }
+
+                // Smooth transition for active state
+                &::after {
+                    content: "";
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 50%;
+                    background-color: orange;
+                    opacity: 0;
+                    transition: opacity 0.3s ease;
+                }
+
+                &.active::after {
+                    opacity: 0.3;
+                    width: 20px;
+                    height: 20px;
                 }
             }
         }
