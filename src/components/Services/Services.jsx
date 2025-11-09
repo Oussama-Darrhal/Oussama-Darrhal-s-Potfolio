@@ -146,6 +146,7 @@ export const Services = () => {
                 variants={pillarContainerVariants}
                 initial="initial"
                 whileInView="animate"
+                style={{ WebkitOverflowScrolling: "touch" }}
             >
                 <motion.div
                     className="pillar"

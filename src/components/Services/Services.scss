@@ -137,6 +137,48 @@
             gap: 20px;
         }
 
+        @media (max-width: 768px) {
+            flex-wrap: nowrap;
+            flex-direction: row;
+            overflow-x: auto;
+            overflow-y: hidden;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: thin;
+            scrollbar-color: rgba(255, 165, 0, 0.3) transparent;
+            padding: 20px 0;
+            gap: 20px;
+            justify-content: flex-start;
+            align-items: stretch;
+
+            // Add padding to first and last child for better edge visibility
+            & > .pillar:first-child {
+                margin-left: 20px;
+            }
+
+            & > .pillar:last-child {
+                margin-right: 20px;
+            }
+
+            // Custom scrollbar styling for webkit browsers
+            &::-webkit-scrollbar {
+                height: 6px;
+            }
+
+            &::-webkit-scrollbar-track {
+                background: transparent;
+            }
+
+            &::-webkit-scrollbar-thumb {
+                background: rgba(255, 165, 0, 0.3);
+                border-radius: 3px;
+
+                &:hover {
+                    background: rgba(255, 165, 0, 0.5);
+                }
+            }
+        }
+
         .pillar {
             flex: 1;
             min-width: 320px;
@@ -158,6 +200,16 @@
                 min-width: 100%;
                 max-width: 100%;
                 padding: 25px;
+            }
+
+            @media (max-width: 768px) {
+                flex: 0 0 auto;
+                min-width: 85vw;
+                max-width: 85vw;
+                width: 85vw;
+                scroll-snap-align: center;
+                margin-right: 0;
+                padding: 25px 20px;
             }
 
             // Subtle glow effect on hover
@@ -209,6 +261,11 @@
                     @include mobile {
                         font-size: 22px;
                     }
+
+                    @media (max-width: 768px) {
+                        font-size: 20px;
+                        margin-bottom: 20px;
+                    }
                 }
             }
 
@@ -230,6 +287,13 @@
                     @include mobile {
                         font-size: 14px;
                         gap: 15px;
+                    }
+
+                    @media (max-width: 768px) {
+                        font-size: 13px;
+                        line-height: 1.5;
+                        padding-left: 18px;
+                        margin-bottom: 12px;
                     }
 
                     // Custom bullet point
