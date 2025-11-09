@@ -1,0 +1,254 @@
+@import "../../app.scss";
+
+.services {
+    background: linear-gradient(180deg, #0c0c1d, #111132);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    @include mobile {
+        opacity: 1 !important; 
+        transform: translateX(0px) translateY(0px) translateZ(0px) !important;
+    }
+
+    .textContainer {
+        flex: 1;
+        align-self: flex-end;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+
+        @include mobile {
+            align-self: center;
+            text-align: center;
+            flex-direction: column;
+        }
+
+        p {
+            font-weight: 200;
+            font-size: 20px;
+            color: gray;
+            text-align: right;
+        }
+
+        hr {
+            width: 500px;
+            border: none;
+            border-top: 0.5px solid gray;
+
+            @include mobile {
+                width: 300px;
+            }
+        }
+    }
+
+    .titleContainer {
+        flex: 2;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        @include mobile {
+            width: 100%;
+        }
+
+        .title {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+
+            @include mobile {
+                flex-direction: column;
+                text-align: center;
+                gap: 20px;
+            }
+
+            img {
+                width: 300px;
+                height: 100px;
+                border-radius: 50px;
+                object-fit: cover;
+
+                @include mobile {
+                    width: 200px;
+                    height: 50px;
+                }
+            }
+
+            h1 {
+                font-size: 96px;
+                font-weight: 100;
+
+                @include mobile {
+                    font-size: 36px;
+                }
+            }
+
+            button {
+                width: 300px;
+                height: 100px;
+                border-radius: 50px;
+                background-color: orange;
+                border: none;
+                font-size: 26px;
+                color: black;
+                font-weight: 400;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 12px;
+
+                @include mobile {
+                    font-size: 16px;
+                    width: 150px;
+                    height: 50px;
+                    gap: 8px;
+                }
+
+                .scrollArrow {
+                    color: black;
+                    width: 24px;
+                    height: 24px;
+                    flex-shrink: 0;
+
+                    @include mobile {
+                        width: 18px;
+                        height: 18px;
+                    }
+                }
+            }
+        }
+    }
+
+    .pillarsContainer {
+        flex: 2;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: stretch;
+        gap: 30px;
+        padding: 40px 20px;
+        max-width: 1400px;
+        margin: 0 auto;
+
+        @include mobile {
+            flex-direction: column;
+            padding: 20px 10px;
+            gap: 20px;
+        }
+
+        .pillar {
+            flex: 1;
+            min-width: 320px;
+            max-width: 400px;
+            background: linear-gradient(
+                135deg,
+                rgba(17, 17, 50, 0.8) 0%,
+                rgba(12, 12, 29, 0.9) 100%
+            );
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 35px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+
+            @include mobile {
+                min-width: 100%;
+                max-width: 100%;
+                padding: 25px;
+            }
+
+            // Subtle glow effect on hover
+            &::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                border-radius: 20px;
+                padding: 1px;
+                background: linear-gradient(
+                    135deg,
+                    rgba(255, 165, 0, 0.3) 0%,
+                    rgba(255, 165, 0, 0.1) 50%,
+                    rgba(255, 255, 255, 0.05) 100%
+                );
+                -webkit-mask: linear-gradient(#fff 0 0) content-box,
+                    linear-gradient(#fff 0 0);
+                -webkit-mask-composite: xor;
+                mask-composite: exclude;
+                opacity: 0;
+                transition: opacity 0.3s ease;
+            }
+
+            &:hover {
+                border-color: rgba(255, 165, 0, 0.4);
+                box-shadow: 0 8px 32px rgba(255, 165, 0, 0.15),
+                    0 0 0 1px rgba(255, 165, 0, 0.1);
+
+                &::before {
+                    opacity: 1;
+                }
+            }
+
+            .pillarHeader {
+                margin-bottom: 25px;
+                padding-bottom: 15px;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+                h2 {
+                    font-size: 28px;
+                    font-weight: 400;
+                    color: orange;
+                    margin: 0;
+                    letter-spacing: 0.5px;
+
+                    @include mobile {
+                        font-size: 22px;
+                    }
+                }
+            }
+
+            .pillarList {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                display: flex;
+                flex-direction: column;
+                gap: 18px;
+
+                li {
+                    color: lightgray;
+                    font-size: 16px;
+                    line-height: 1.6;
+                    position: relative;
+                    padding-left: 20px;
+
+                    @include mobile {
+                        font-size: 14px;
+                        gap: 15px;
+                    }
+
+                    // Custom bullet point
+                    &::before {
+                        content: "▹";
+                        position: absolute;
+                        left: 0;
+                        color: orange;
+                        font-size: 18px;
+                        line-height: 1.6;
+                    }
+
+                    .pillarLabel {
+                        color: orange;
+                        font-weight: 500;
+                        margin-right: 5px;
+                    }
+                }
+            }
+        }
+    }
+}
