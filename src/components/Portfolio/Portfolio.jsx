@@ -24,7 +24,7 @@ const Single = ({item}) => {
                     <h2 >{item.title}</h2>
                     <p>{item.desc}</p>
                     <div className="buttonContainer">
-                    <motion.button whileHover={{opacity: 0.6, transition: { duration: 0.2, ease: "easeOut" },scale: 0.98, filter: blur(10)}}><a href={"https://google.com"} target="_blank">Demo</a></motion.button>
+                    <motion.button whileHover={{opacity: 0.6, transition: { duration: 0.2, ease: "easeOut" },scale: 0.98, filter: blur(10)}}><a href={item.demo} target="_blank" rel="noreferrer">Demo</a></motion.button>
                     <motion.button whileHover={{opacity: 0.6, transition: { duration: 0.2, ease: "easeOut" },scale: 0.98, filter: blur(10)}}>Github Repo</motion.button>
                     </div>
                 </motion.div>
