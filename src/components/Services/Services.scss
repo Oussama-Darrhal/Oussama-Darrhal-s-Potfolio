@@ -135,8 +135,8 @@
             flex-direction: row;
             overflow-x: auto;
             overflow-y: hidden;
-            scroll-snap-type: x mandatory;
-            scroll-snap-stop: always;
+            // scroll-snap-type: x mandatory;
+            // scroll-snap-stop: always;
             -webkit-overflow-scrolling: touch;
             scrollbar-width: none;
             -ms-overflow-style: none; 
@@ -182,8 +182,8 @@
                 min-width: 85vw;
                 max-width: 85vw;
                 width: 85vw;
-                scroll-snap-align: center;
-                scroll-snap-stop: always;
+                // scroll-snap-align: center;
+                // scroll-snap-stop: always;
                 margin-right: 0;
                 padding: 25px 20px;
                 height: 100%;
