@@ -74,7 +74,7 @@ export const Services = () => {
                             transition: { duration: 0.2, ease: "easeOut" },
                             scale: 0.98,
                         }}
-                        src="/people.gif"
+                        src="/peoplee.gif"
                         alt=""
                     />
                     <motion.h1>

@@ -4,7 +4,7 @@ export const projects = [
         id: 1,
         title: "LMS Platform",
         emoji: "🎓",
-        img: "/people.gif",
+        img: "/people1.gif",
         desc: "A solo-built e-learning platform with multi-user roles, secure video streaming, progress tracking, and on-demand PDF certificate generation.",
         techStack: ["Laravel", "React", "MySQL", "Video Streaming", "PDF Generation"],
         caseStudy: {
