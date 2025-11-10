@@ -190,32 +190,6 @@
                 flex-direction: column;
             }
 
-            // Subtle glow effect on hover
-            &::before {
-                content: "";
-                position: absolute;
-                top: 0;
-                left: 0;
-                right: 0;
-                bottom: 0;
-                border-radius: 20px;
-                padding: 1px;
-                background: linear-gradient(
-                    135deg,
-                    rgba(255, 165, 0, 0.3) 0%,
-                    rgba(255, 165, 0, 0.1) 50%,
-                    rgba(255, 255, 255, 0.05) 100%
-                );
-                -webkit-mask: linear-gradient(#fff 0 0) content-box,
-                    linear-gradient(#fff 0 0);
-                -webkit-mask-composite: xor;
-                mask: linear-gradient(#fff 0 0) content-box,
-                    linear-gradient(#fff 0 0);
-                mask-composite: exclude;
-                opacity: 0;
-                transition: opacity 0.3s ease;
-            }
-
             &:hover {
                 border-color: rgba(255, 165, 0, 0.4);
                 box-shadow: 0 8px 32px rgba(255, 165, 0, 0.15),
