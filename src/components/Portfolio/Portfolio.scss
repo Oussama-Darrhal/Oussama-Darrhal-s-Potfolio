@@ -2,6 +2,8 @@
 
 .Portfolio {
     position: relative;
+    height: 100vh;
+    overflow-y: scroll;
     scroll-snap-type: y mandatory;
 
     .progress {
@@ -50,6 +52,7 @@
         z-index: 1;
         scroll-snap-align: start;
         will-change: transform;
+        height: 100vh;
         
         @include mobile {
             min-height: 100vh;
