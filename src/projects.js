@@ -39,7 +39,7 @@ export const projects = [
                 techStack: ["React", "JavaScript (ES6+)", "Performance", "Lazy Loading", "UI/UX", "Data Visualization"]
             }
         },
-        repo: "https://github.com",
+        repo: "https://github.com/flyingpim/traccarou",
     },
     {
         id: 2,
@@ -84,7 +84,7 @@ export const projects = [
                 techStack: ["Laravel", "Python (FastAPI)", "React.js", "MySQL", "Docker", "Microservices", "Multi-tenancy", "TailwindCSS"]
             }
         },
-        repo: "https://github.com",
+        repo: "https://github.com/Oussama-Darrhal/Business-Operating-System",
     },
     {
         id: 3,
@@ -130,6 +130,6 @@ export const projects = [
                 techStack: ["Laravel", "React.js", "MySQL", "TailwindCSS", "API REST", "Github"]
             }
         },
-        repo: "https://github.com",
+        repo: "https://github.com/Oussama-Darrhal/lms-laravel",
     }
 ];
