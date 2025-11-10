@@ -11,7 +11,7 @@ export const projects = [
             "GRAPH-2.png",
             "EXPAND-TRIP.png",
         ],
-        desc: "Led the frontend revamp for a SaaS GPS platform, achieving -47% page load time, +40% interaction speed, and an 18% increase in user retention.",
+        desc: "Led the frontend revamp for a SaaS GPS platform, achieving -47% page load time, +40% interaction speed, and a significant increase in user retention.",
         techStack: ["React", "JavaScript", "Performance Optimization", "Lazy Loading", "UI/UX Refactor"],
         caseStudy: {
             // Business Case (for Recruiters)
