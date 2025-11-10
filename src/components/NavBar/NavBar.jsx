@@ -2,6 +2,7 @@
 import { SideBar } from "../NavBar/SideBar/SideBar"
 import "./NavBar.scss"
 import { motion } from "framer-motion"
+import { useLanguage } from "../../hooks/useLanguage"
 
 
 const textVariants = {
@@ -19,6 +20,11 @@ const textVariants = {
 }
 
 export const NavBar = () => {
+    const { lang, setLang, t } = useLanguage();
+    const toggleLanguage = () => {
+        const newLang = lang === 'en' ? 'fr' : 'en';
+        setLang(newLang);
+    };
 return (
         <div className="navbar">
             {/* SideBar */}
@@ -28,6 +34,9 @@ return (
                 <motion.div className="socials" variants={textVariants} initial="initial" animate="animate">
                     <motion.a variants={textVariants} href="https://www.linkedin.com/in/oussama-darrhal-6344ba250/" target="_blank"><img src="/linkedin.png" alt="" /></motion.a>
                     <motion.a variants={textVariants} href="https://github.com/oussama-darrhal" target="_blank"><img src="/github.png" alt="" /></motion.a>
+                    <motion.button variants={textVariants} onClick={toggleLanguage} className="language-toggle">
+                        {t('navbar.toggle')}
+                    </motion.button>
                 </motion.div>
             </div>
         </div>

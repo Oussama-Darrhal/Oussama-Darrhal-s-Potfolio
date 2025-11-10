@@ -1,9 +1,11 @@
 import { useRef } from "react";
 import "./Services.scss";
 import { motion, useInView } from "framer-motion";
+import { useLanguage } from "../../hooks/useLanguage";
 
 export const Services = () => {
     const ref = useRef();
+    const { t } = useLanguage();
 
     const isInView = useInView(ref, { margin: "-100px" });
 
@@ -60,10 +62,7 @@ export const Services = () => {
             animate={isInView && "animate"}
         >
             <motion.div className="textContainer " variants={variants}>
-                <p>
-                    I Translate Complex Technical Challenges<br />
-                    Into Elegant, Efficient Solutions.
-                </p>
+                <p>{t('services.title')}</p>
                 <hr />
             </motion.div>
             <motion.div className="titleContainer" variants={variants}>
@@ -78,12 +77,12 @@ export const Services = () => {
                         alt=""
                     /> */}
                     <motion.h1>
-                        <motion.b whileInView={{ color: "orange" }}>Clean </motion.b>Code.
+                        <motion.b whileInView={{ color: "orange" }}>{t('services.clean_bold')}</motion.b>{t('services.clean_tail')}
                     </motion.h1>
                 </div>
                 <div className="title">
                     <h1>
-                        <motion.b whileInView={{ color: "orange" }}>Solid </motion.b>Architecture.
+                        <motion.b whileInView={{ color: "orange" }}>{t('services.solid_bold')}</motion.b>{t('services.solid_tail')}
                     </h1>
                     <motion.button
                         style={{ cursor: "default" }}
@@ -93,7 +92,7 @@ export const Services = () => {
                             scale: 0.98,
                         }}
                     >
-                        THE PILLARS
+                        {t('services.pillars_button')}
                         {/* arrow down svg */}
                         <motion.svg
                             className="scrollArrow"
@@ -157,24 +156,24 @@ export const Services = () => {
                     }}
                 >
                     <div className="pillarHeader">
-                        <h2>🏛️ Backend & API Engineering</h2>
+                        <h2>🏛️ {t('pillars.backend_title')}</h2>
                     </div>
                     <ul className="pillarList">
                         <li>
                             <span className="pillarLabel">Laravel & PHP:</span> Building
-                            scalable, secure, and maintainable server-side applications.
+                            {` ${t('pillars.backend_p1')}`}
                         </li>
                         <li>
                             <span className="pillarLabel">RESTful API Design:</span> Crafting
-                            clean, efficient, and well-documented APIs.
+                            {` ${t('pillars.backend_p2')}`}
                         </li>
                         <li>
                             <span className="pillarLabel">Database Architecture (MySQL):</span>{" "}
-                            Data modeling, query optimization, and schema design.
+                            {t('pillars.backend_p3')}
                         </li>
                         <li>
                             <span className="pillarLabel">Containerization (Docker):</span>{" "}
-                            Ensuring consistent development and deployment environments.
+                            {t('pillars.backend_p4')}
                         </li>
                     </ul>
                 </motion.div>
@@ -188,24 +187,24 @@ export const Services = () => {
                     }}
                 >
                     <div className="pillarHeader">
-                        <h2>💻 Frontend & Interface Development</h2>
+                        <h2>💻 {t('pillars.frontend_title')}</h2>
                     </div>
                     <ul className="pillarList">
                         <li>
                             <span className="pillarLabel">React.js & Next.js:</span> Developing
-                            dynamic, high-performance UIs (SPA & SSR).
+                            {` ${t('pillars.frontend_p1')}`}
                         </li>
                         <li>
                             <span className="pillarLabel">JavaScript (ES6+) & TypeScript:</span>{" "}
-                            Asynchronous programming and modern, type-safe code.
+                            {t('pillars.frontend_p2')}
                         </li>
                         <li>
                             <span className="pillarLabel">Responsive UI/UX Design:</span>{" "}
-                            Implementing pixel-perfect, accessible designs.
+                            {t('pillars.frontend_p3')}
                         </li>
                         <li>
                             <span className="pillarLabel">Efficient Workflow:</span> Optimized
-                            development environment using Vim/Neovim.
+                            {` ${t('pillars.frontend_p4')}`}
                         </li>
                     </ul>
                 </motion.div>
@@ -219,24 +218,24 @@ export const Services = () => {
                     }}
                 >
                     <div className="pillarHeader">
-                        <h2>🧬 Architecture & Methodology</h2>
+                        <h2>🧬 {t('pillars.arch_title')}</h2>
                     </div>
                     <ul className="pillarList">
                         <li>
                             <span className="pillarLabel">SOLID Principles:</span> Writing
-                            decoupled, maintainable, and testable object-oriented code.
+                            {` ${t('pillars.arch_p1')}`}
                         </li>
                         <li>
                             <span className="pillarLabel">Test-Driven Development (TDD):</span>{" "}
-                            Building reliable applications with comprehensive coverage.
+                            {t('pillars.arch_p2')}
                         </li>
                         <li>
                             <span className="pillarLabel">System Design:</span> Architecting
-                            solutions using Monolithic and Microservice patterns.
+                            {t('pillars.arch_p3')}
                         </li>
                         <li>
                             <span className="pillarLabel">Version Control:</span> Advanced Git
-                            workflows for team collaboration.
+                            {` ${t('pillars.arch_p4')}`}
                         </li>
                     </ul>
                 </motion.div>

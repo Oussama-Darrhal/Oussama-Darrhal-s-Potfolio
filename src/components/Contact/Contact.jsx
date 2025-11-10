@@ -1,6 +1,7 @@
 import { useRef, useState } from "react";
 import "./Contact.scss";
 import { motion, useInView } from "framer-motion";
+import { useLanguage } from "../../hooks/useLanguage";
 // import emailjs from "@emailjs/browser";
 
 const variants = {
@@ -25,6 +26,7 @@ export const Contact = () => {
     const formRef = useRef();
     const [error, setError] = useState(false);
     const [success, setSuccess] = useState(false);
+    const { t } = useLanguage();
 
     const isInView = useInView(ref, { margin: "-100px" });
 
@@ -66,8 +68,8 @@ export const Contact = () => {
         whileInView="animate"
         >
         <motion.div className="textContainer" variants={variants}>
-            <motion.h1 variants={variants}>Let Us work together</motion.h1>
-            <motion.p variants={variants}>Feel free to download my CV, or send me a message directly using the form.</motion.p>
+            <motion.h1 variants={variants}>{t('contact.title')}</motion.h1>
+            <motion.p variants={variants}>{t('contact.subtitle')}</motion.p>
             <motion.button
                 className="cvButton"
                 variants={variants}
@@ -81,7 +83,7 @@ export const Contact = () => {
                     <polyline points="7 10 12 15 17 10"></polyline>
                     <line x1="12" y1="15" x2="12" y2="3"></line>
                 </svg>
-                Download my CV
+                {t('contact.cv_button')}
             </motion.button>
         </motion.div>
         <div className="formContainer">
@@ -120,10 +122,10 @@ export const Contact = () => {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ delay: 4, duration: 1 }}>
-            <input type="text" required placeholder="Name" name="name"/>
-            <input type="email" required placeholder="Email" name="email"/>
-            <textarea rows={8} placeholder="Message" name="message"/>
-            <button style={{ color: "black" }}>Submit</button>
+            <input type="text" required placeholder={t('contact.form_name')} name="name"/>
+            <input type="email" required placeholder={t('contact.form_email')} name="email"/>
+            <textarea rows={8} placeholder={t('contact.form_message')} name="message"/>
+            <button style={{ color: "black" }}>{t('contact.form_submit')}</button>
             {error && "Error"}
             {success && "Success"}
         </motion.form>

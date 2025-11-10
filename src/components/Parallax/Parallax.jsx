@@ -1,10 +1,12 @@
 import { useRef } from "react"
 import "./Parallax.scss"
 import { motion, useScroll, useTransform } from "framer-motion"
+import { useLanguage } from "../../hooks/useLanguage"
 
 export const Parallax = ({type}) => {
 
     const ref = useRef()
+    const { t } = useLanguage()
 
     const {scrollYProgress} = useScroll({
         target:ref,
@@ -21,7 +23,7 @@ export const Parallax = ({type}) => {
                 ? "linear-gradient(180deg, #111132, #0c0c1d)"
                 : "linear-gradient(180deg, #111132, #505064)"
             }}>
-            <motion.h1 style={{y: yBg}}>{type === "services" ? "The Pillars of My Craft" : "What I Did?"}</motion.h1>
+            <motion.h1 style={{y: yBg}}>{type === "services" ? t('parallax.pillars') : t('parallax.projects')}</motion.h1>
             <motion.div className="mountains"></motion.div>
             <motion.div style={{y: yBg, backgroundImage: `url(${type==="services" ? "/planets.png" : "/sun.png"})` }} className="planets"></motion.div>
             <motion.div style={{x: yBg}} className="stars"></motion.div>

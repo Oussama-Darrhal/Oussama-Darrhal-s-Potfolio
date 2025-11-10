@@ -1,0 +1,145 @@
+{
+  "navbar": {
+    "toggle": "EN"
+  },
+  "parallax": {
+    "pillars": "Les Piliers de Mon Savoir-Faire",
+    "projects": "Mes Projets"
+  },
+  "services": {
+    "title": "Je traduis des défis techniques complexes en solutions élégantes et efficaces.",
+    "clean_bold": "Code ",
+    "clean_tail": "propre.",
+    "solid_bold": "Architecture ",
+    "solid_tail": "solide.",
+    "pillars_button": "LES PILIERS"
+  },
+  "hero": {
+    "name": "Oussama DARRHAL",
+    "title": "Développeur Web Full Stack.",
+    "see_work": "Voir les derniers projets",
+    "contact_me": "Me contacter",
+    "marquee": "PHP Laravel VueJS React JavaScript"
+  },
+  "portfolio": {
+    "tech_stack": "Technologies",
+    "view_case_study": "Voir l’étude de cas",
+    "github_repo": "Dépôt Github"
+  },
+  "projectModal": {
+    "project_summary": "Résumé du projet",
+    "problem": "Problème",
+    "solution": "Solution",
+    "result": "Résultat",
+    "technical_breakdown": "Analyse technique",
+    "my_role": "Mon rôle",
+    "key_technical_challenges": "Défis techniques clés",
+    "core_features": "Fonctionnalités principales",
+    "tech_stack": "Technologies",
+    "project_screenshots": "Captures d’écran du projet"
+  },
+  "projects": {
+    "traccar": {
+      "title": "Refonte du projet Traccar",
+      "desc": "Refonte du frontend d’une plateforme SaaS GPS, avec -47% de temps de chargement, +40% de vitesse d’interaction et une forte hausse de la rétention utilisateurs.",
+      "businessCase": {
+        "problem": "Une plateforme SaaS industrielle de données de sécurité souffrait de graves problèmes de performance. Des temps de chargement de 3,6 s et une UI peu fluide compliquaient la prise de décision rapide sur le terrain.",
+        "solution": "J’ai mené une refonte complète du frontend, en implémentant le lazy loading et une gestion optimisée des ressources. J’ai redesigné des composants critiques (barre latérale, graphiques interactifs) pour gagner plus de 40% en vitesse d’interaction.",
+        "result": "Le temps de chargement est passé de 3,6 s à 1,9 s (-47%), la vitesse d’interaction a augmenté de 40% et la rétention a progressé de 18%. L’optimisation proactive et des tests ciblés ont aussi réduit les bugs signalés de 30%."
+      },
+      "technicalDeepDive": {
+        "myRole": "Lead Développeur Frontend (Freelance)",
+        "technicalChallenges": [
+          "Obtenir -47% de temps de chargement sur une base de code entreprise existante.",
+          "Refactorer des composants UI critiques (navbar, sidebar, graphiques) pour +40% de vitesse.",
+          "Implémenter le lazy loading et l’optimisation des ressources sans perturber le flux de données temps réel.",
+          "Optimiser les visualisations de données pour une prise de décision rapide par les équipes terrain."
+        ],
+        "coreFeatures": [
+          "Lazy loading et gestion optimisée des ressources",
+          "Graphiques de données interactifs et rapides",
+          "Refonte de la navigation et de la sidebar",
+          "Optimisation proactive du code et tests ciblés",
+          "UI améliorée pour un usage entreprise"
+        ]
+      }
+    },
+    "bos": {
+      "title": "BOS (Business OS)",
+      "desc": "Plateforme SaaS ambitieuse avec multi‑tenant et microservices. Projet actuellement en développement actif.",
+      "businessCase": {
+        "problem": "Les PME utilisent plusieurs outils déconnectés. Elles ont besoin d’une plateforme centralisée pour gérer les utilisateurs, l’inventaire et les retours clients, avec des insights IA pour les décisions stratégiques.",
+        "solution": "Je construis un « Business OS » centralisé de zéro. Il propose une architecture multi‑tenant sécurisée garantissant l’isolation stricte des données. Un microservice séparé (Python FastAPI) traite l’analyse IA des plaintes et avis clients.",
+        "result": "L’architecture cœur est terminée, offrant une isolation stricte et une base scalable. Le module de gestion utilisateurs/rôles est fonctionnel, avec les modules d’analyse IA et d’inventaire en cours."
+      },
+      "technicalDeepDive": {
+        "myRole": "Architecte Full‑Stack solo",
+        "technicalChallenges": [
+          "Concevoir une architecture multi‑tenant sécurisée avec isolation stricte (tenant_id).",
+          "Architecturer un système hybride monolithe/microservice (Laravel + Python FastAPI).",
+          "Containeriser tous les services pour un dev reproductible (Docker).",
+          "Implémenter un système dynamique de rôles/autorisations pilotant l’UI."
+        ],
+        "coreFeatures": [
+          "Architecture multi‑tenant sécurisée (isolation stricte)",
+          "Gestion des utilisateurs, rôles et permissions",
+          "UI dynamique basée sur les droits",
+          "Microservice IA externe (FastAPI) pour l’analyse",
+          "Modules de retours/avis clients",
+          "Modules Inventaire & Reporting (en cours)"
+        ]
+      }
+    },
+    "lms": {
+      "title": "Plateforme LMS",
+      "desc": "Plateforme e‑learning développée en solo, avec streaming vidéo adaptatif, tableaux de bord multi‑rôles et génération automatique de certificats PDF.",
+      "businessCase": {
+        "problem": "Écoles et centres de formation ont besoin d’une plateforme intuitive pour délivrer des cours, suivre la progression et émettre des certificats. Les solutions prêtes à l’emploi sont souvent rigides ou incomplètes.",
+        "solution": "J’ai construit un LMS full‑stack axé sur l’expérience. Lecteur vidéo adaptatif (zones à faible débit), dashboards multi‑utilisateurs pour réduire l’administratif, et génération automatique de certificats PDF personnalisés.",
+        "result": "Expérience d’apprentissage fluide et fiable. Les enseignants suivent la progression en temps réel et l’automatisation des certificats fait gagner un temps conséquent."
+      },
+      "technicalDeepDive": {
+        "myRole": "Architecte Full‑Stack solo",
+        "technicalChallenges": [
+          "Construire un lecteur vidéo adaptatif selon le débit.",
+          "Concevoir des dashboards multi‑rôles (enseignant/étudiant) avec permissions distinctes.",
+          "Automatiser la génération de certificats PDF sécurisés avec logos/signatures.",
+          "Concevoir un suivi de progression en temps réel."
+        ],
+        "coreFeatures": [
+          "Streaming vidéo adaptatif",
+          "Dashboards multi‑utilisateurs (enseignant & étudiant)",
+          "Génération de certificats PDF à la demande",
+          "Statistiques et suivi de progression en temps réel",
+          "Gestion intuitive des cours et des étudiants"
+        ]
+      }
+    }
+  },
+  "pillars": {
+    "backend_title": "Ingénierie Backend & API",
+    "backend_p1": "Construire des applications côté serveur scalables, sécurisées et maintenables.",
+    "backend_p2": "Créer des API propres, efficaces et bien documentées.",
+    "backend_p3": "Modélisation des données, optimisation des requêtes et conception de schémas.",
+    "backend_p4": "Garantir des environnements de développement et de déploiement cohérents.",
+    "frontend_title": "Développement Frontend & Interface",
+    "frontend_p1": "Développer des interfaces utilisateur dynamiques et performantes (SPA & SSR).",
+    "frontend_p2": "Programmation asynchrone et code moderne et typé.",
+    "frontend_p3": "Implémenter des designs pixel-perfect et accessibles.",
+    "frontend_p4": "Environnement de développement optimisé avec Vim/Neovim.",
+    "arch_title": "Architecture & Méthodologie",
+    "arch_p1": "Écrire du code orienté objet découplé, maintenable et testable.",
+    "arch_p2": "Construire des applications fiables avec une couverture de test complète.",
+    "arch_p3": "Concevoir des solutions en utilisant des modèles Monolithiques et Microservices.",
+    "arch_p4": "Flux de travail Git avancés pour la collaboration en équipe."
+  },
+  "contact": {
+    "title": "Travaillons ensemble",
+    "subtitle": "N'hésitez pas à télécharger mon CV, ou à m'envoyer un message directement via le formulaire.",
+    "cv_button": "Télécharger mon CV",
+    "form_name": "Nom",
+    "form_email": "Email",
+    "form_message": "Message",
+    "form_submit": "Envoyer"
+  }
+}

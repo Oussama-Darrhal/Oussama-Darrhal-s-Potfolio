@@ -3,12 +3,14 @@ import { useEffect, useRef, useState } from "react";
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
 import "./ProjectModal.scss";
+import { useLanguage } from "../../hooks/useLanguage";
 
 export const ProjectModal = ({ isOpen, onClose, project }) => {
     const modalContentRef = useRef(null);
     const modalContainerRef = useRef(null);
     const [isLightboxOpen, setIsLightboxOpen] = useState(false);
     const [selectedIndex, setSelectedIndex] = useState(0);
+    const { t } = useLanguage();
 
     // TODO: Replace this with project.images when ready
     const placeholderImages = project.images;
@@ -111,7 +113,7 @@ export const ProjectModal = ({ isOpen, onClose, project }) => {
                                 <div className="modal-header">
                                     <h2>
                                         <span className="modal-emoji">{project.emoji}</span>
-                                        {project.title}
+                                        {t(project.titleKey)}
                                     </h2>
                                 </div>
 
@@ -119,58 +121,58 @@ export const ProjectModal = ({ isOpen, onClose, project }) => {
                                     <div className="modal-sections">
                                         {/* Section 1: Business Case (for Recruiters) */}
                                         <section className="modal-section business-case-section">
-                                            <h3>Project Summary</h3>
+                                            <h3>{t('projectModal.project_summary')}</h3>
                                             <div className="business-case-content">
                                                 <div className="business-case-item">
-                                                    <h4 className="business-case-label">Problem</h4>
-                                                    <p>{project.caseStudy.businessCase.problem}</p>
+                                                    <h4 className="business-case-label">{t('projectModal.problem')}</h4>
+                                                    <p>{t(project.caseStudy.businessCase.problemKey)}</p>
                                                 </div>
                                                 <div className="business-case-item">
-                                                    <h4 className="business-case-label">Solution</h4>
-                                                    <p>{project.caseStudy.businessCase.solution}</p>
+                                                    <h4 className="business-case-label">{t('projectModal.solution')}</h4>
+                                                    <p>{t(project.caseStudy.businessCase.solutionKey)}</p>
                                                 </div>
                                                 <div className="business-case-item">
-                                                    <h4 className="business-case-label">Result</h4>
-                                                    <p>{project.caseStudy.businessCase.result}</p>
+                                                    <h4 className="business-case-label">{t('projectModal.result')}</h4>
+                                                    <p>{t(project.caseStudy.businessCase.resultKey)}</p>
                                                 </div>
                                             </div>
                                         </section>
 
                                         {/* Section 2: Technical Deep Dive (for Techs) */}
                                         <section className="modal-section technical-deep-dive-section">
-                                            <h3>Technical Breakdown</h3>
+                                            <h3>{t('projectModal.technical_breakdown')}</h3>
                                             <div className="technical-content">
                                                 <div className="technical-subsection">
-                                                    <h4 className="technical-label">My Role</h4>
-                                                    <p className="technical-role">{project.caseStudy.technicalDeepDive.myRole}</p>
+                                                    <h4 className="technical-label">{t('projectModal.my_role')}</h4>
+                                                    <p className="technical-role">{t(project.caseStudy.technicalDeepDive.myRoleKey)}</p>
                                                 </div>
 
                                                 <div className="technical-subsection">
-                                                    <h4 className="technical-label">Key Technical Challenges</h4>
+                                                    <h4 className="technical-label">{t('projectModal.key_technical_challenges')}</h4>
                                                     <ul className="modal-list">
-                                                        {project.caseStudy.technicalDeepDive.technicalChallenges.map((challenge, index) => (
+                                                        {project.caseStudy.technicalDeepDive.technicalChallengesKeys.map((challengeKey, index) => (
                                                             <li key={index}>
                                                                 <span className="list-bullet">▹</span>
-                                                                {challenge}
+                                                                {t(challengeKey)}
                                                             </li>
                                                         ))}
                                                     </ul>
                                                 </div>
 
                                                 <div className="technical-subsection">
-                                                    <h4 className="technical-label">Core Features</h4>
+                                                    <h4 className="technical-label">{t('projectModal.core_features')}</h4>
                                                     <ul className="modal-list">
-                                                        {project.caseStudy.technicalDeepDive.coreFeatures.map((feature, index) => (
+                                                        {project.caseStudy.technicalDeepDive.coreFeaturesKeys.map((featureKey, index) => (
                                                             <li key={index}>
                                                                 <span className="list-bullet">▹</span>
-                                                                {feature}
+                                                                {t(featureKey)}
                                                             </li>
                                                         ))}
                                                     </ul>
                                                 </div>
 
                                                 <div className="technical-subsection">
-                                                    <h4 className="technical-label">Tech Stack</h4>
+                                                    <h4 className="technical-label">{t('projectModal.tech_stack')}</h4>
                                                     <div className="tech-stack-pills">
                                                         {project.caseStudy.technicalDeepDive.techStack.map((tech, index) => (
                                                             <span key={index} className="tech-pill">
@@ -184,7 +186,7 @@ export const ProjectModal = ({ isOpen, onClose, project }) => {
 
                                         {/* Section 3: Project Screenshots */}
                                         <section className="modal-section screenshots-section">
-                                            <h3>Project Screenshots</h3>
+                                            <h3>{t('projectModal.project_screenshots')}</h3>
                                             <div className="screenshot-gallery">
                                                 {placeholderImages.map((src, index) => (
                                                     <img 

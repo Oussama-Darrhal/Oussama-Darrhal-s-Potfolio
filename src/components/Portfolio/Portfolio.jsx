@@ -3,9 +3,11 @@ import "./Portfolio.scss"
 import { motion, useScroll, useSpring } from "framer-motion";
 import { projects } from '../../projects';
 import { ProjectModal } from './ProjectModal';
+import { useLanguage } from "../../hooks/useLanguage";
 
 const Single = ({item}) => {
     const [isModalOpen, setIsModalOpen] = useState(false);
+    const { t } = useLanguage();
 
     return (
         <motion.section 
@@ -26,12 +28,12 @@ const Single = ({item}) => {
                     <div className="textContainer">
                         <div className="project-header">
                             <span className="project-emoji">{item.emoji}</span>
-                            <h2>{item.title}</h2>
+                            <h2>{t(item.titleKey)}</h2>
                         </div>
-                        <p className="project-description">{item.desc}</p>
+                        <p className="project-description">{t(item.descKey)}</p>
                         
                         <div className="tech-stack-section">
-                            <h3 className="tech-stack-title">Tech Stack</h3>
+                            <h3 className="tech-stack-title">{t('portfolio.tech_stack')}</h3>
                             <div className="tech-stack-tags">
                                 {item.techStack.map((tech, index) => (
                                     <span key={index} className="tech-tag">
@@ -51,7 +53,7 @@ const Single = ({item}) => {
                                 }}
                                 whileTap={{ scale: 0.98 }}
                             >
-                                View Case Study
+                                {t('portfolio.view_case_study')}
                             </motion.button>
                             <motion.button 
                                 className="github-button"
@@ -61,7 +63,7 @@ const Single = ({item}) => {
                                 }}
                                 whileTap={{ scale: 0.98 }}
                             >
-                                <a href={item.repo} target="_blank" rel="noreferrer">Github Repo</a>
+                                <a href={item.repo} target="_blank" rel="noreferrer">{t('portfolio.github_repo')}</a>
                             </motion.button>
                         </div>
                     </div>
@@ -79,6 +81,7 @@ const Single = ({item}) => {
 export const Portfolio = () => {
 
     const ref = useRef()
+    const { t } = useLanguage();
 
     const {scrollYProgress} = useScroll({
         target: ref,
@@ -93,7 +96,7 @@ export const Portfolio = () => {
     return (
         <div className="Portfolio" ref={ref}>
             <div className="progress">
-                <h1>Featured Works</h1>
+                <h1>{t('parallax.projects')}</h1>
                 <motion.div style={{scaleX}} className="progressBar"></motion.div>
             </div>
             {projects.map(item => (
