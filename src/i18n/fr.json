@@ -116,6 +116,12 @@
       }
     }
   },
+  "sidebar": {
+    "home": "Accueil",
+    "services": "Services",
+    "portfolio": "Portfolio",
+    "contact": "Contact"
+  },
   "pillars": {
     "backend_title": "Ingénierie Backend & API",
     "backend_p1": "Construire des applications côté serveur scalables, sécurisées et maintenables.",

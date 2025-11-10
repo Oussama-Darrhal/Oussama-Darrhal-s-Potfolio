@@ -116,6 +116,12 @@
       }
     }
   },
+  "sidebar": {
+    "home": "Home",
+    "services": "Services",
+    "portfolio": "Portfolio",
+    "contact": "Contact"
+  },
     "pillars": {
         "backend_title": "Backend & API Engineering",
         "backend_p1": "Building scalable, secure, and maintainable server-side applications.",
