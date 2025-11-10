@@ -7,7 +7,7 @@
     right: 0;
     bottom: 0;
     background: rgba(0, 0, 0, 0.85);
-    backdrop-filter: blur(8px);
+    // backdrop-filter: blur(8px);
     z-index: 9998;
     cursor: pointer;
 }
@@ -42,7 +42,7 @@
         0 20px 60px rgba(0, 0, 0, 0.5),
         0 0 0 1px rgba(255, 165, 0, 0.1),
         inset 0 1px 0 rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(20px);
+    // backdrop-filter: blur(20px);
     z-index: 9999;
     overflow: hidden;
     display: flex;
@@ -74,7 +74,7 @@
     justify-content: center;
     transition: all 0.3s ease;
     z-index: 10000;
-    backdrop-filter: blur(10px);
+    // backdrop-filter: blur(10px);
 
     &:hover {
         background: rgba(255, 165, 0, 0.3);
