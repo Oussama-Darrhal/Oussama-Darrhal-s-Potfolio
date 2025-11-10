@@ -1,10 +1,19 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
+import Lightbox from "yet-another-react-lightbox";
+import "yet-another-react-lightbox/styles.css";
 import "./ProjectModal.scss";
 
 export const ProjectModal = ({ isOpen, onClose, project }) => {
     const modalContentRef = useRef(null);
     const modalContainerRef = useRef(null);
+    const [isLightboxOpen, setIsLightboxOpen] = useState(false);
+    const [selectedIndex, setSelectedIndex] = useState(0);
+
+    // TODO: Replace this with project.images when ready
+    const placeholderImages = project.images;
+
+    const slides = placeholderImages.map(src => ({ src: src }));
 
     useEffect(() => {
         if (!isOpen) return;
@@ -176,25 +185,19 @@ export const ProjectModal = ({ isOpen, onClose, project }) => {
                                         {/* Section 3: Project Screenshots */}
                                         <section className="modal-section screenshots-section">
                                             <h3>Project Screenshots</h3>
-                                            <div className="screenshots-gallery">
-                                                <div className="screenshot-placeholder">
-                                                    <span className="placeholder-text">Screenshot 1</span>
-                                                </div>
-                                                <div className="screenshot-placeholder">
-                                                    <span className="placeholder-text">Screenshot 2</span>
-                                                </div>
-                                                <div className="screenshot-placeholder">
-                                                    <span className="placeholder-text">Screenshot 3</span>
-                                                </div>
-                                                <div className="screenshot-placeholder">
-                                                    <span className="placeholder-text">Screenshot 4</span>
-                                                </div>
-                                                <div className="screenshot-placeholder">
-                                                    <span className="placeholder-text">Screenshot 5</span>
-                                                </div>
-                                                <div className="screenshot-placeholder">
-                                                    <span className="placeholder-text">Screenshot 6</span>
-                                                </div>  
+                                            <div className="screenshot-gallery">
+                                                {placeholderImages.map((src, index) => (
+                                                    <img 
+                                                        key={index}
+                                                        src={src} 
+                                                        alt={`Project screenshot ${index + 1}`}
+                                                        className="gallery-image"
+                                                        onClick={() => {
+                                                            setSelectedIndex(index);
+                                                            setIsLightboxOpen(true);
+                                                        }}
+                                                    />
+                                                ))}
                                             </div>
                                         </section>
                                     </div>
@@ -202,6 +205,12 @@ export const ProjectModal = ({ isOpen, onClose, project }) => {
                             </div>
                         </motion.div>
                     </div>
+                    <Lightbox
+                        open={isLightboxOpen}
+                        close={() => setIsLightboxOpen(false)}
+                        slides={slides}
+                        index={selectedIndex}
+                    />
                 </>
             )}
         </AnimatePresence>

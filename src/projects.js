@@ -1,9 +1,16 @@
 export const projects = [
     {
-        id: 2,
+        id: 1,
         title: "Traccar Project Revamp",
-        emoji: "🗺️",
-        img: "/planets.png",
+        emoji: "🌍",
+        img: "TRACCAR-MAIN.png", // Main image
+        images: [ // Gallery images for the lightbox
+            "TRACCAR-MAIN.png",
+            "FLOATING-CARD.png",
+            "THE-GRAPH.png",
+            "GRAPH-2.png",
+            "EXPAND-TRIP.png",
+        ],
         desc: "Led the frontend revamp for a SaaS GPS platform, achieving -47% page load time, +40% interaction speed, and an 18% increase in user retention.",
         techStack: ["React", "JavaScript", "Performance Optimization", "Lazy Loading", "UI/UX Refactor"],
         caseStudy: {
@@ -11,7 +18,7 @@ export const projects = [
             businessCase: {
                 problem: "An industrial SaaS platform for security data was suffering from severe performance issues. Page load times of 3.6s and a clunky UI made it difficult for clients to make fast, terrain-based decisions.",
                 solution: "I led a complete frontend refactor, implementing lazy loading and optimized resource management. I redesigned critical UI components (like the sidebar and interactive graphs) to be over 40% faster during user interactions.",
-                result: "The platform's page load time was reduced from 3.6s to 1.9s (-47%), interaction speed increased by 40%, and user retention improved by 18%."
+                result: "The platform's page load time was reduced from 3.6s to 1.9s (-47%), interaction speed increased by 40%, and user retention improved by 18%. Proactive optimization and targeted testing also led to a 30% reduction in reported bugs."
             },
             // Technical Deep Dive (for Techs)
             technicalDeepDive: {
@@ -35,11 +42,22 @@ export const projects = [
         repo: "https://github.com",
     },
     {
-        id: 3,
+        id: 2,
         title: "BOS (Business OS)",
         emoji: "💼",
-        img: "/stars.png",
-        desc: "A high-ambition SaaS platform built with a complex multi-tenancy architecture and a microservice structure (Laravel monolith + Python FastAPI for AI). That is still in development.",
+        img: "LMS-MAIN.png", // Main image
+        images: [
+            "STUDENT-DASHBOARD.jpg",
+            "CERTIFICATE.png",
+            "COURSE-STUDYING.jpg",
+            "LMS-MAIN.png",
+            "COURSES-PAGE.jpg",
+            "LMS-LOGIN.jpg",
+            "LMS-REGISTER.jpg",
+            "COURSE-PAGE.jpg",
+            "TEACHER-DASHBOARD.png"
+        ],
+        desc: "A high-ambition SaaS platform with complex multi-tenancy and microservice architecture. This project is currently in active development.",
         techStack: ["Laravel", "Python (FastAPI)", "React.js", "Docker", "Microservices", "Multi-tenancy"],
         caseStudy: {
             // Business Case (for Recruiters)
@@ -61,8 +79,8 @@ export const projects = [
                     "Secure multi-tenant architecture (strict data isolation)",
                     "User, role, and permission management",
                     "Dynamic UI rendering based on user rights",
-                    "External AI microservice (FastAPI) for data analysis (in-development)",
-                    "Base modules for Customer Complaints and Reviews (in-development)",
+                    "External AI microservice (FastAPI) for data analysis",
+                    "Base modules for Customer Complaints and Reviews",
                     "Inventory & Reporting modules (in-development)"
                 ],
                 techStack: ["Laravel", "Python (FastAPI)", "React.js", "MySQL", "Docker", "Microservices", "Multi-tenancy", "TailwindCSS"]
@@ -71,10 +89,21 @@ export const projects = [
         repo: "https://github.com",
     },
     {
-        id: 1,
+        id: 3,
         title: "LMS Platform",
         emoji: "🎓",
-        img: "/people1ee.gif",
+        img: "LMS-MAIN.png", // Main image
+        images: [
+            "LMS-MAIN.png",
+            "LMS-REGISTER.png",
+            "LMS-LOGIN.png",
+            "COURSES-PAGE.png",
+            "COURSE-PAGE.png",
+            "TEACHER-DASHBOARD.png",
+            "STUDENT-DASHBOARD.png",
+            "COURSE-STUDYING.png",
+            "CERTIFICATE.png",
+        ],
         desc: "A solo-built e-learning platform with adaptive video streaming, multi-user dashboards, and automated PDF certificate generation.",
         techStack: ["Laravel", "React.js", "MySQL", "TailwindCSS", "API REST", "Video Streaming"],
         caseStudy: {
@@ -104,5 +133,5 @@ export const projects = [
             }
         },
         repo: "https://github.com",
-    },
-]
+    }
+];

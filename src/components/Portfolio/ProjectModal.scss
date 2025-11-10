@@ -261,7 +261,7 @@
 
 // Screenshots Section
 .screenshots-section {
-    .screenshots-gallery {
+    .screenshot-gallery {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 20px;
@@ -272,31 +272,20 @@
             gap: 15px;
         }
 
-        .screenshot-placeholder {
+        .gallery-image {
+            width: 100%;
+            height: auto;
             aspect-ratio: 16 / 9;
-            background: rgba(255, 255, 255, 0.05);
-            border: 2px dashed rgba(255, 165, 0, 0.3);
+            object-fit: cover;
             border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+            border: 2px solid rgba(255, 165, 0, 0.2);
 
             &:hover {
-                background: rgba(255, 255, 255, 0.08);
+                transform: scale(1.03);
+                opacity: 0.9;
                 border-color: rgba(255, 165, 0, 0.5);
-            }
-
-            .placeholder-text {
-                color: rgba(255, 165, 0, 0.5);
-                font-size: 14px;
-                font-weight: 500;
-                text-transform: uppercase;
-                letter-spacing: 1px;
-
-                @include mobile {
-                    font-size: 12px;
-                }
             }
         }
     }
