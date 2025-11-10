@@ -2,7 +2,6 @@
 
 .Portfolio {
     position: relative;
-    scroll-snap-type: y mandatory;
 
     .progress {
         position: sticky;
@@ -48,7 +47,7 @@
     .portfolio-section {
         position: relative;
         z-index: 1;
-        scroll-snap-align: start;
+        height: 100vh;
         will-change: transform;
         
         @include mobile {
@@ -130,14 +129,14 @@
                     @include mobile {
                         height: 100%;
                         border-radius: 16px;
-                        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+                        box-shadow: none;
                         
                         &::before {
                             display: none;
                         }
                         
                         &:hover {
-                            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+                            box-shadow: none;
                             border-color: rgba(255, 255, 255, 0.1);
                         }
                     }
@@ -317,6 +316,7 @@
                                 padding: 6px 14px;
                                 font-size: 13px;
                                 border-radius: 10px;
+                                transition: none;
                                 
                                 &:hover {
                                     border-color: rgba(255, 165, 0, 0.3);
@@ -389,11 +389,12 @@
                         box-shadow: 0 4px 16px rgba(255, 165, 0, 0.2);
 
                         @include mobile {
-                            box-shadow: 0 2px 8px rgba(255, 165, 0, 0.15);
+                            box-shadow: none;
+                            transition: none;
                             
                             &:hover {
                                 background: linear-gradient(135deg, orange, rgba(255, 165, 0, 0.8));
-                                box-shadow: 0 2px 8px rgba(255, 165, 0, 0.15);
+                                box-shadow: none;
                             }
                         }
 
@@ -410,6 +411,8 @@
                         // backdrop-filter: blur(10px);
 
                         @include mobile {
+                            transition: none;
+                            
                             &:hover {
                                 background: transparent;
                                 border-color: rgba(255, 255, 255, 0.3);
