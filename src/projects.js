@@ -45,17 +45,15 @@ export const projects = [
         id: 2,
         title: "BOS (Business OS)",
         emoji: "💼",
-        img: "LMS-MAIN.png", // Main image
+        img: "BOS-MAIN.png", // Main image
         images: [
-            "STUDENT-DASHBOARD.jpg",
-            "CERTIFICATE.png",
-            "COURSE-STUDYING.jpg",
-            "LMS-MAIN.png",
-            "COURSES-PAGE.jpg",
-            "LMS-LOGIN.jpg",
-            "LMS-REGISTER.jpg",
-            "COURSE-PAGE.jpg",
-            "TEACHER-DASHBOARD.png"
+            "BOS-MAIN.png",
+            "BOS-REGISTER.png",
+            "BOS-LOGIN.png",
+            "Company Profile.png",
+            "Users-Management.png",
+            "Role-Management.png",
+            "ACTIVITY-LOGS.png",
         ],
         desc: "A high-ambition SaaS platform with complex multi-tenancy and microservice architecture. This project is currently in active development.",
         techStack: ["Laravel", "Python (FastAPI)", "React.js", "Docker", "Microservices", "Multi-tenancy"],
