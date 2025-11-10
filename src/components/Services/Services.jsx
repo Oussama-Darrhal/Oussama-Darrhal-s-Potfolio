@@ -68,7 +68,7 @@ export const Services = () => {
             </motion.div>
             <motion.div className="titleContainer" variants={variants}>
                 <div className="title">
-                    <motion.img
+                    {/* <motion.img
                         whileHover={{
                             opacity: 0.8,
                             transition: { duration: 0.2, ease: "easeOut" },
@@ -76,7 +76,7 @@ export const Services = () => {
                         }}
                         src="/peoplee.gif"
                         alt=""
-                    />
+                    /> */}
                     <motion.h1>
                         <motion.b whileInView={{ color: "orange" }}>Clean </motion.b>Code.
                     </motion.h1>
