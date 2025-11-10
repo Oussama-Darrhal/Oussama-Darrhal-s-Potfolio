@@ -191,16 +191,32 @@
                 display: flex;
                 flex-direction: column;
 
-                // Disable expensive hover effects on mobile
+                // --- Aggressive mobile performance optimizations ---
+                
+                // 1. Completely remove the complex hover effect
                 &:hover {
                     box-shadow: none;
                     transform: none;
+                    border-color: rgba(255, 255, 255, 0.1); // Reset border
                 }
 
-                // Disable the complex mask/gradient pseudo-element
+                // 2. Completely remove the complex pseudo-element
                 &::before {
-                    display: none;
+                    display: none; 
                 }
+
+                // 3. Simplify the background.
+                //    A solid color is MUCH faster than a gradient.
+                background: #0c0c1d; // Use a solid, opaque background
+
+                // 4. Ensure box-shadow is gone (if any exists)
+                box-shadow: none;
+
+                // 5. Ensure backdrop-filter is gone (if any exists)
+                backdrop-filter: none;
+
+                // 6. Disable transitions on mobile for better performance
+                transition: none;
             }
 
             &:hover {
