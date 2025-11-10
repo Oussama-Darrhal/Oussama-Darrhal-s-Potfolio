@@ -5,8 +5,9 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+
     @include mobile {
-        opacity: 1 !important; 
+        opacity: 1 !important;
         transform: translateX(0px) translateY(0px) translateZ(0px) !important;
         justify-content: space-evenly;
     }
@@ -139,8 +140,8 @@
             // scroll-snap-stop: always;
             -webkit-overflow-scrolling: touch;
             scrollbar-width: none;
-            -ms-overflow-style: none; 
-            padding: 20px 0 60px 0; 
+            -ms-overflow-style: none;
+            padding: 20px 0 60px 0;
             gap: 20px;
             justify-content: flex-start;
             align-items: stretch;
@@ -153,11 +154,11 @@
             }
 
             // Add padding to first and last child for better edge visibility
-            & > .pillar:first-child {
+            &>.pillar:first-child {
                 margin-left: 7.5vw; // Center the first pillar with 7.5vw on each side
             }
 
-            & > .pillar:last-child {
+            &>.pillar:last-child {
                 margin-right: 7.5vw; // Center the last pillar with 7.5vw on each side
             }
         }
@@ -174,8 +175,13 @@
             overflow: hidden;
             transition: all 0.3s ease;
             backdrop-filter: none;
-            // This gives the GPU a "heads-up" to prepare this element
             will-change: transform;
+            overflow-y: scroll;
+            scrollbar-width: none;
+
+            &::-webkit-scrollbar {
+                display: none;
+            }
 
             @media (max-width: 768px) {
                 flex: 0 0 85vw;
@@ -192,7 +198,7 @@
                 flex-direction: column;
 
                 // --- Aggressive mobile performance optimizations ---
-                
+
                 // 1. Completely remove the complex hover effect
                 &:hover {
                     box-shadow: none;
@@ -202,7 +208,7 @@
 
                 // 2. Completely remove the complex pseudo-element
                 &::before {
-                    display: none; 
+                    display: none;
                 }
 
                 // 3. Simplify the background.
@@ -299,5 +305,4 @@
             }
         }
     }
-
 }
