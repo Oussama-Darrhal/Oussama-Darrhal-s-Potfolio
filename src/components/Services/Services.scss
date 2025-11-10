@@ -1,7 +1,6 @@
 @import "../../app.scss";
 
 .services {
-    background: linear-gradient(180deg, #0c0c1d, #111132);
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -139,9 +138,9 @@
             scroll-snap-type: x mandatory;
             scroll-snap-stop: always;
             -webkit-overflow-scrolling: touch;
-            scrollbar-width: none; // Hide scrollbar for cleaner look
-            -ms-overflow-style: none; // Hide scrollbar in IE/Edge
-            padding: 20px 0 60px 0; // Extra bottom padding for pagination dots
+            scrollbar-width: none;
+            -ms-overflow-style: none; 
+            padding: 20px 0 60px 0; 
             gap: 20px;
             justify-content: flex-start;
             align-items: stretch;

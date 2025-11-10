@@ -10,20 +10,20 @@ import { Services } from "./components/Services/Services";
 
 const App = () => {
   return <div >
-  <div>
-    <Cursor />
-    <section id="HomePage">
-      <NavBar />
-      <Hero />
-    </section>  
-    <section id="Services"><Parallax type="services"/></section>
-    <section>
-    <Services />
-    </section>
-    <section id="Portfolio"><Parallax type="portfolio"/></section>
-    <Portfolio />
-    <section id="Contact"><Contact /></section>
-  </div>
+    <div>
+      <Cursor />
+      <section id="HomePage">
+        <NavBar />
+        <Hero />
+      </section>
+      <section id="Services"><Parallax type="services" /></section>
+      <section>
+        <Services />
+      </section>
+      <section id="Portfolio"><Parallax type="portfolio" /></section>
+      <Portfolio />
+      <section id="Contact"><Contact /></section>
+    </div>
   </div>;
 };
 

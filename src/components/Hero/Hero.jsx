@@ -41,7 +41,7 @@ const sliderVariants = {
 }
 
 const scrollByAmount = () => {
-    window.scrollBy({ top: 200, behavior: 'smooth' }); // Change 200 to the desired scroll amount in pixels
+    window.scrollBy({ top: 200, behavior: 'smooth' });
 };
 
 export const Hero = () => {
