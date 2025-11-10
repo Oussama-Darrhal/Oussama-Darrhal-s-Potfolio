@@ -1,113 +1,108 @@
-
 export const projects = [
     {
-        id: 1,
-        title: "LMS Platform",
-        emoji: "🎓",
-        img: "/people1ee.gif",
-        desc: "A solo-built e-learning platform with multi-user roles, secure video streaming, progress tracking, and on-demand PDF certificate generation.",
-        techStack: ["Laravel", "React", "MySQL", "Video Streaming", "PDF Generation"],
-        caseStudy: {
-            // Business Case (for Recruiters)
-            businessCase: {
-                problem: "Educational institutions and businesses needed a modern e-learning solution that could securely deliver courses, track student progress, and issue certificates—but existing platforms were either too expensive, lacked key features, or didn't provide the level of control needed.",
-                solution: "I built a comprehensive Learning Management System from the ground up, designing a platform that enables seamless course delivery, real-time progress tracking, and automated certificate generation—all while maintaining enterprise-grade security for video content.",
-                result: "The platform successfully delivers secure, scalable e-learning experiences with automated workflows that reduce administrative overhead. Students can access protected content seamlessly, and institutions can issue certificates on-demand, creating a complete educational ecosystem."
-            },
-            // Technical Deep Dive (for Techs)
-            technicalDeepDive: {
-                myRole: "Solo Full-Stack Architect",
-                technicalChallenges: [
-                    "Implementing secure video streaming without third-party services",
-                    "Building a scalable multi-tenant architecture",
-                    "Creating an intuitive user experience for diverse user roles",
-                    "Designing a robust certificate generation system"
-                ],
-                coreFeatures: [
-                    "Multi-user role system (Admin, Instructor, Student)",
-                    "Secure video streaming with DRM protection",
-                    "Real-time progress tracking and analytics",
-                    "On-demand PDF certificate generation",
-                    "Course management and content organization",
-                    "Payment integration for course purchases"
-                ],
-                techStack: ["Laravel", "React", "MySQL", "Video Streaming", "PDF Generation"]
-            }
-        },
-        repo: "https://github.com",
-    },
-    {
         id: 2,
-        title: "Traccar Revamp",
-        emoji: "🌍",
+        title: "Traccar Project Revamp",
+        emoji: "🗺️",
         img: "/planets.png",
-        desc: "A professional freelance project. Led the frontend (React) revamp of a real-time GPS fleet tracker, achieving -47% page load time via lazy loading and smart rendering.",
-        techStack: ["React", "JavaScript", "Performance Optimization", "Lazy Loading", "Real-time Updates"],
+        desc: "Led the frontend revamp for a SaaS GPS platform, achieving -47% page load time, +40% interaction speed, and an 18% increase in user retention.",
+        techStack: ["React", "JavaScript", "Performance Optimization", "Lazy Loading", "UI/UX Refactor"],
         caseStudy: {
             // Business Case (for Recruiters)
             businessCase: {
-                problem: "The company's existing GPS fleet tracking system was slow and hard to use. Fleet managers struggled with long page load times and a clunky interface, making it difficult to monitor vehicles in real-time and manage operations efficiently.",
-                solution: "I led the frontend revamp, building a modern, high-performance interface using React. I implemented advanced optimization techniques including lazy loading and smart rendering strategies that maintained real-time functionality while dramatically improving speed.",
-                result: "This achieved a 47% reduction in page load time, making the product far more usable for enterprise clients. Fleet managers can now monitor their vehicles instantly, leading to better operational efficiency and improved user satisfaction."
+                problem: "An industrial SaaS platform for security data was suffering from severe performance issues. Page load times of 3.6s and a clunky UI made it difficult for clients to make fast, terrain-based decisions.",
+                solution: "I led a complete frontend refactor, implementing lazy loading and optimized resource management. I redesigned critical UI components (like the sidebar and interactive graphs) to be over 40% faster during user interactions.",
+                result: "The platform's page load time was reduced from 3.6s to 1.9s (-47%), interaction speed increased by 40%, and user retention improved by 18%."
             },
             // Technical Deep Dive (for Techs)
             technicalDeepDive: {
-                myRole: "Lead Frontend Developer",
+                myRole: "Lead Frontend Developer (Freelance)",
                 technicalChallenges: [
-                    "Reducing page load time by 47% without sacrificing real-time updates",
-                    "Implementing lazy loading without breaking real-time map updates",
-                    "Maintaining backward compatibility with existing API",
-                    "Optimizing map rendering for large fleets with hundreds of vehicles"
+                    "Achieving a -47% load time reduction in an existing enterprise codebase.",
+                    "Refactoring critical UI components (navbar, sidebar, graphs) for +40% speed.",
+                    "Implementing lazy loading & optimized asset management without disrupting real-time data flow.",
+                    "Optimizing data visualizations for rapid decision-making by field teams."
                 ],
                 coreFeatures: [
-                    "Real-time GPS tracking with live map updates",
-                    "Fleet management dashboard",
-                    "Route history and analytics",
-                    "Geofencing and alerts",
-                    "Device management interface",
-                    "Performance-optimized rendering"
+                    "Lazy loading & optimized asset management",
+                    "High-speed interactive data graphs",
+                    "Redesigned dynamic navigation and sidebar",
+                    "Proactive code optimization and targeted testing",
+                    "Improved UI for enterprise-level usability"
                 ],
-                techStack: ["React", "JavaScript", "Performance Optimization", "Lazy Loading", "Real-time Updates"]
+                techStack: ["React", "JavaScript (ES6+)", "Performance", "Lazy Loading", "UI/UX", "Data Visualization"]
             }
         },
         repo: "https://github.com",
     },
     {
         id: 3,
-        title: "BOS (SaaS)",
+        title: "BOS (Business OS)",
         emoji: "💼",
         img: "/stars.png",
-        desc: "A high-ambition SaaS platform with complex multi-tenancy (global scopes), a microservice structure (Laravel + Python FastAPI), and Docker containerization.",
-        techStack: ["Laravel", "Python FastAPI", "Docker", "Microservices", "Multi-tenancy", "PostgreSQL"],
+        desc: "A high-ambition SaaS platform built with a complex multi-tenancy architecture and a microservice structure (Laravel monolith + Python FastAPI for AI). That is still in development.",
+        techStack: ["Laravel", "Python (FastAPI)", "React.js", "Docker", "Microservices", "Multi-tenancy"],
         caseStudy: {
             // Business Case (for Recruiters)
             businessCase: {
-                problem: "The business needed a scalable SaaS platform that could serve multiple enterprise clients simultaneously, each with their own isolated data and custom configurations. Existing solutions couldn't handle the complexity of multi-tenant architecture at scale.",
-                solution: "I architected and built a high-performance SaaS platform using a microservices approach, implementing complex multi-tenancy with global scopes. The system is fully containerized with Docker, ensuring each client's data remains completely isolated while sharing infrastructure efficiently.",
-                result: "The platform provides a scalable foundation for enterprise growth, with secure multi-tenant isolation that allows the business to onboard new clients seamlessly. The modern architecture supports rapid feature development and can scale to serve hundreds of enterprise customers."
+                problem: "Small to Medium Enterprises (SMEs) use multiple disconnected tools. They need a single, centralized platform to manage users, inventory, and customer feedback, and get AI-driven insights to make strategic decisions.",
+                solution: "I am building a centralized 'Business OS' from scratch. It features a secure multi-tenant architecture to keep all client data strictly isolated. A separate microservice (using Python FastAPI) is being developed to handle AI-driven analysis of customer complaints and reviews.",
+                result: "The platform's core architecture is complete, providing strict data isolation for tenants and a scalable foundation. The user/role management module is functional, with the AI analysis and inventory modules in active development."
             },
             // Technical Deep Dive (for Techs)
             technicalDeepDive: {
                 myRole: "Solo Full-Stack Architect",
                 technicalChallenges: [
-                    "Implementing secure multi-tenancy with global scopes",
-                    "Coordinating microservices communication between Laravel and Python FastAPI",
-                    "Managing Docker orchestration and deployment pipelines",
-                    "Ensuring data isolation and security across tenants",
-                    "Building scalable infrastructure from the ground up"
+                    "Designing a secure, multi-tenant architecture with strict data isolation (tenant_id).",
+                    "Architecting a hybrid monolith/microservice system (Laravel + Python FastAPI).",
+                    "Containerizing all services for reproducible development (Docker).",
+                    "Implementing a dynamic role/permission system that controls the UI."
                 ],
                 coreFeatures: [
-                    "Multi-tenant architecture with global scopes",
-                    "Microservice-based architecture (Laravel + Python FastAPI)",
-                    "Docker containerization for all services",
-                    "RESTful API design",
-                    "Database isolation per tenant",
-                    "Scalable infrastructure design"
+                    "Secure multi-tenant architecture (strict data isolation)",
+                    "User, role, and permission management",
+                    "Dynamic UI rendering based on user rights",
+                    "External AI microservice (FastAPI) for data analysis (in-development)",
+                    "Base modules for Customer Complaints and Reviews (in-development)",
+                    "Inventory & Reporting modules (in-development)"
                 ],
-                techStack: ["Laravel", "Python FastAPI", "Docker", "Microservices", "Multi-tenancy", "PostgreSQL"]
+                techStack: ["Laravel", "Python (FastAPI)", "React.js", "MySQL", "Docker", "Microservices", "Multi-tenancy", "TailwindCSS"]
             }
         },
         repo: "https://github.com",
     },
-];
-
+    {
+        id: 1,
+        title: "LMS Platform",
+        emoji: "🎓",
+        img: "/people1ee.gif",
+        desc: "A solo-built e-learning platform with adaptive video streaming, multi-user dashboards, and automated PDF certificate generation.",
+        techStack: ["Laravel", "React.js", "MySQL", "TailwindCSS", "API REST", "Video Streaming"],
+        caseStudy: {
+            // Business Case (for Recruiters)
+            businessCase: {
+                problem: "Schools and training centers need an intuitive platform to deliver digital courses, track student progress, and issue certificates. Off-the-shelf solutions are often inflexible, expensive, or lack key features.",
+                solution: "I built a full-stack LMS from scratch, focusing on a seamless user experience. It features an adaptive video player (for low-bandwidth areas), multi-user dashboards to reduce administrative work, and an automated system for generating custom PDF certificates.",
+                result: "The platform provides a smooth, reliable learning experience. Instructors can track student progress in real-time to intervene when needed, and automated certification saves significant administrative time."
+            },
+            // Technical Deep Dive (for Techs)
+            technicalDeepDive: {
+                myRole: "Solo Full-Stack Architect",
+                technicalChallenges: [
+                    "Building an adaptive video player that adjusts quality based on connection speed.",
+                    "Designing a multi-user dashboard (teacher/student) with distinct permissions.",
+                    "Automating a secure PDF certificate generation system with custom logos/signatures.",
+                    "Architecting a system for real-time student progress tracking."
+                ],
+                coreFeatures: [
+                    "Adaptive quality video streaming",
+                    "Multi-user dashboards (Teacher & Student roles)",
+                    "Automated on-demand PDF certificate generation",
+                    "Real-time progress statistics and tracking",
+                    "Intuitive course & student management"
+                ],
+                techStack: ["Laravel", "React.js", "MySQL", "TailwindCSS", "API REST", "Github"]
+            }
+        },
+        repo: "https://github.com",
+    },
+]

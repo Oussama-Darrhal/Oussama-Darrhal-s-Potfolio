@@ -13,7 +13,7 @@ export const ProjectModal = ({ isOpen, onClose, project }) => {
         const handleWheelEvent = (e) => {
             const target = e.target;
             const modalContainer = modalContainerRef.current;
-            
+
             if (!modalContainer) return;
 
             // Check if the target is inside the modal container
@@ -28,7 +28,7 @@ export const ProjectModal = ({ isOpen, onClose, project }) => {
         const handleTouchMoveEvent = (e) => {
             const target = e.target;
             const modalContainer = modalContainerRef.current;
-            
+
             if (!modalContainer) return;
 
             // Check if the target is inside the modal container
@@ -44,11 +44,11 @@ export const ProjectModal = ({ isOpen, onClose, project }) => {
         const handleScrollEvent = (e) => {
             const target = e.target;
             const modalContainer = modalContainerRef.current;
-            
+
             if (!modalContainer) return;
 
             // If scrolling the document/body and target is outside modal, prevent it
-            if ((target === document || target === document.body || target === document.documentElement) || 
+            if ((target === document || target === document.body || target === document.documentElement) ||
                 !modalContainer.contains(target)) {
                 e.preventDefault();
                 e.stopPropagation();
@@ -97,100 +97,109 @@ export const ProjectModal = ({ isOpen, onClose, project }) => {
                             <button className="modal-close" onClick={onClose}>
                                 ✕
                             </button>
-                            
+
                             <div className="modal-content" ref={modalContentRef}>
-                            <div className="modal-header">
-                                <h2>
-                                    <span className="modal-emoji">{project.emoji}</span>
-                                    {project.title}
-                                </h2>
-                            </div>
+                                <div className="modal-header">
+                                    <h2>
+                                        <span className="modal-emoji">{project.emoji}</span>
+                                        {project.title}
+                                    </h2>
+                                </div>
 
-                            <div className="modal-body">
-                                <div className="modal-sections">
-                                    {/* Section 1: Business Case (for Recruiters) */}
-                                    <section className="modal-section business-case-section">
-                                        <h3>Project Summary</h3>
-                                        <div className="business-case-content">
-                                            <div className="business-case-item">
-                                                <h4 className="business-case-label">Problem</h4>
-                                                <p>{project.caseStudy.businessCase.problem}</p>
-                                            </div>
-                                            <div className="business-case-item">
-                                                <h4 className="business-case-label">Solution</h4>
-                                                <p>{project.caseStudy.businessCase.solution}</p>
-                                            </div>
-                                            <div className="business-case-item">
-                                                <h4 className="business-case-label">Result</h4>
-                                                <p>{project.caseStudy.businessCase.result}</p>
-                                            </div>
-                                        </div>
-                                    </section>
-
-                                    {/* Section 2: Technical Deep Dive (for Techs) */}
-                                    <section className="modal-section technical-deep-dive-section">
-                                        <h3>Technical Breakdown</h3>
-                                        <div className="technical-content">
-                                            <div className="technical-subsection">
-                                                <h4 className="technical-label">My Role</h4>
-                                                <p className="technical-role">{project.caseStudy.technicalDeepDive.myRole}</p>
-                                            </div>
-                                            
-                                            <div className="technical-subsection">
-                                                <h4 className="technical-label">Key Technical Challenges</h4>
-                                                <ul className="modal-list">
-                                                    {project.caseStudy.technicalDeepDive.technicalChallenges.map((challenge, index) => (
-                                                        <li key={index}>
-                                                            <span className="list-bullet">▹</span>
-                                                            {challenge}
-                                                        </li>
-                                                    ))}
-                                                </ul>
-                                            </div>
-
-                                            <div className="technical-subsection">
-                                                <h4 className="technical-label">Core Features</h4>
-                                                <ul className="modal-list">
-                                                    {project.caseStudy.technicalDeepDive.coreFeatures.map((feature, index) => (
-                                                        <li key={index}>
-                                                            <span className="list-bullet">▹</span>
-                                                            {feature}
-                                                        </li>
-                                                    ))}
-                                                </ul>
-                                            </div>
-
-                                            <div className="technical-subsection">
-                                                <h4 className="technical-label">Tech Stack</h4>
-                                                <div className="tech-stack-pills">
-                                                    {project.caseStudy.technicalDeepDive.techStack.map((tech, index) => (
-                                                        <span key={index} className="tech-pill">
-                                                            {tech}
-                                                        </span>
-                                                    ))}
+                                <div className="modal-body">
+                                    <div className="modal-sections">
+                                        {/* Section 1: Business Case (for Recruiters) */}
+                                        <section className="modal-section business-case-section">
+                                            <h3>Project Summary</h3>
+                                            <div className="business-case-content">
+                                                <div className="business-case-item">
+                                                    <h4 className="business-case-label">Problem</h4>
+                                                    <p>{project.caseStudy.businessCase.problem}</p>
+                                                </div>
+                                                <div className="business-case-item">
+                                                    <h4 className="business-case-label">Solution</h4>
+                                                    <p>{project.caseStudy.businessCase.solution}</p>
+                                                </div>
+                                                <div className="business-case-item">
+                                                    <h4 className="business-case-label">Result</h4>
+                                                    <p>{project.caseStudy.businessCase.result}</p>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </section>
+                                        </section>
 
-                                    {/* Section 3: Project Screenshots */}
-                                    <section className="modal-section screenshots-section">
-                                        <h3>Project Screenshots</h3>
-                                        <div className="screenshots-gallery">
-                                            <div className="screenshot-placeholder">
-                                                <span className="placeholder-text">Screenshot 1</span>
+                                        {/* Section 2: Technical Deep Dive (for Techs) */}
+                                        <section className="modal-section technical-deep-dive-section">
+                                            <h3>Technical Breakdown</h3>
+                                            <div className="technical-content">
+                                                <div className="technical-subsection">
+                                                    <h4 className="technical-label">My Role</h4>
+                                                    <p className="technical-role">{project.caseStudy.technicalDeepDive.myRole}</p>
+                                                </div>
+
+                                                <div className="technical-subsection">
+                                                    <h4 className="technical-label">Key Technical Challenges</h4>
+                                                    <ul className="modal-list">
+                                                        {project.caseStudy.technicalDeepDive.technicalChallenges.map((challenge, index) => (
+                                                            <li key={index}>
+                                                                <span className="list-bullet">▹</span>
+                                                                {challenge}
+                                                            </li>
+                                                        ))}
+                                                    </ul>
+                                                </div>
+
+                                                <div className="technical-subsection">
+                                                    <h4 className="technical-label">Core Features</h4>
+                                                    <ul className="modal-list">
+                                                        {project.caseStudy.technicalDeepDive.coreFeatures.map((feature, index) => (
+                                                            <li key={index}>
+                                                                <span className="list-bullet">▹</span>
+                                                                {feature}
+                                                            </li>
+                                                        ))}
+                                                    </ul>
+                                                </div>
+
+                                                <div className="technical-subsection">
+                                                    <h4 className="technical-label">Tech Stack</h4>
+                                                    <div className="tech-stack-pills">
+                                                        {project.caseStudy.technicalDeepDive.techStack.map((tech, index) => (
+                                                            <span key={index} className="tech-pill">
+                                                                {tech}
+                                                            </span>
+                                                        ))}
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <div className="screenshot-placeholder">
-                                                <span className="placeholder-text">Screenshot 2</span>
+                                        </section>
+
+                                        {/* Section 3: Project Screenshots */}
+                                        <section className="modal-section screenshots-section">
+                                            <h3>Project Screenshots</h3>
+                                            <div className="screenshots-gallery">
+                                                <div className="screenshot-placeholder">
+                                                    <span className="placeholder-text">Screenshot 1</span>
+                                                </div>
+                                                <div className="screenshot-placeholder">
+                                                    <span className="placeholder-text">Screenshot 2</span>
+                                                </div>
+                                                <div className="screenshot-placeholder">
+                                                    <span className="placeholder-text">Screenshot 3</span>
+                                                </div>
+                                                <div className="screenshot-placeholder">
+                                                    <span className="placeholder-text">Screenshot 4</span>
+                                                </div>
+                                                <div className="screenshot-placeholder">
+                                                    <span className="placeholder-text">Screenshot 5</span>
+                                                </div>
+                                                <div className="screenshot-placeholder">
+                                                    <span className="placeholder-text">Screenshot 6</span>
+                                                </div>  
                                             </div>
-                                            <div className="screenshot-placeholder">
-                                                <span className="placeholder-text">Screenshot 3</span>
-                                            </div>
-                                        </div>
-                                    </section>
+                                        </section>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
                         </motion.div>
                     </div>
                 </>
