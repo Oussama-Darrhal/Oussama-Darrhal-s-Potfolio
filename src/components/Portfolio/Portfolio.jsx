@@ -1,17 +1,11 @@
 import { useRef, useState } from "react";
 import "./Portfolio.scss"
-import { motion, useScroll, useSpring, useTransform } from "framer-motion";
+import { motion, useScroll, useSpring } from "framer-motion";
 import { projects } from '../../projects';
 import { ProjectModal } from './ProjectModal';
 
 const Single = ({item}) => {
     const [isModalOpen, setIsModalOpen] = useState(false);
-    const ref = useRef()
-
-    const {scrollYProgress} = useScroll({
-        target: ref,
-    });
-
 
     return (
         <motion.section 
@@ -23,27 +17,13 @@ const Single = ({item}) => {
         >
             <div className="container">
                 <div className="wrapper">
-                    <motion.div 
-                        className="imageContainer" 
-                        ref={ref}
-                        initial={{ opacity: 0, x: -100 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true, margin: "-100px" }}
-                        transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-                    >
+                    <div className="imageContainer">
                         <div className="image-wrapper">
                             <img src={item.img} alt={item.title} />
                             <div className="image-overlay"></div>
                         </div>
-                    </motion.div>
-                    <motion.div 
-                        className="textContainer"
-                        // style={{y}}
-                        initial={{ opacity: 0, x: 100 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true, margin: "-100px" }}
-                        transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
-                    >
+                    </div>
+                    <div className="textContainer">
                         <div className="project-header">
                             <span className="project-emoji">{item.emoji}</span>
                             <h2>{item.title}</h2>
@@ -84,7 +64,7 @@ const Single = ({item}) => {
                                 <a href={item.repo} target="_blank" rel="noreferrer">Github Repo</a>
                             </motion.button>
                         </div>
-                    </motion.div>
+                    </div>
                 </div>
             </div>
             <ProjectModal 
