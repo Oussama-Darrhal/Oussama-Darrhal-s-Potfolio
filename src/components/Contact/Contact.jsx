@@ -67,24 +67,14 @@ export const Contact = () => {
         >
         <motion.div className="textContainer" variants={variants}>
             <motion.h1 variants={variants}>Let Us work together</motion.h1>
-            <motion.div className="item" variants={variants}>
-            <h2>Mail</h2>
-            <span>hello@react.dev</span>
-            </motion.div>
-            <motion.div className="item" variants={variants}>
-            <h2>Address</h2>
-            <span>Hello street New York</span>
-            </motion.div>
-            <motion.div className="item" variants={variants}>
-            <h2>Phone</h2>
-            <span>+1 234 5678</span>
-            </motion.div>
+            <motion.p variants={variants}>Feel free to download my CV, or send me a message directly using the form.</motion.p>
             <motion.button
                 className="cvButton"
                 variants={variants}
                 onClick={handleDownloadCV}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
+                style={{ color: "black" }}
             >
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                     <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
@@ -133,7 +123,7 @@ export const Contact = () => {
             <input type="text" required placeholder="Name" name="name"/>
             <input type="email" required placeholder="Email" name="email"/>
             <textarea rows={8} placeholder="Message" name="message"/>
-            <button>Submit</button>
+            <button style={{ color: "black" }}>Submit</button>
             {error && "Error"}
             {success && "Success"}
         </motion.form>

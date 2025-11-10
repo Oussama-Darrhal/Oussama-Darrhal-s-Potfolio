@@ -25,6 +25,7 @@
     flex: 1;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     gap: 40px;
 
     @include tablet {
@@ -53,26 +54,14 @@
       }
     }
 
-    .item {
-      @include mobile {
-        width: 100%;
-      }
-
-      h2 {
-        @include mobile {
-          font-size: 18px;
-        }
-      }
-
-      span {
-        @include mobile {
-          font-size: 14px;
-        }
-      }
-    }
-
-    span {
+    p {
+      font-size: 20px;
+      color: lightgray;
       font-weight: 300;
+
+      @include mobile {
+        font-size: 16px;
+      }
     }
 
     .cvButton {
@@ -89,7 +78,8 @@
       font-weight: 500;
       cursor: pointer;
       transition: all 0.3s ease;
-      margin-top: 10px;
+      margin-top: 30px;
+      width: 250px;
 
       @include tablet {
         padding: 15px;
