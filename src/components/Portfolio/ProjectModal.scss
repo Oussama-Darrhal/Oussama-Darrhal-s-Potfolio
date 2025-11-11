@@ -42,12 +42,12 @@
         0 20px 60px rgba(0, 0, 0, 0.5),
         0 0 0 1px rgba(255, 165, 0, 0.1),
         inset 0 1px 0 rgba(255, 255, 255, 0.1);
-    // backdrop-filter: blur(20px);
     z-index: 9999;
     overflow: hidden;
     display: flex;
     flex-direction: column;
     overscroll-behavior: contain;
+    margin: auto;
 
     @include mobile {
         width: 95%;
