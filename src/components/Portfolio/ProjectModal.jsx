@@ -71,6 +71,9 @@ export const ProjectModal = ({ isOpen, onClose, project }) => {
         window.addEventListener('touchmove', handleTouchMoveEvent, { passive: false });
         document.addEventListener('scroll', handleScrollEvent, { passive: false, capture: true });
 
+        // Hide the menu sidebar when the modal is open
+        document.body.classList.add('modal-open');
+
         // Also prevent body scroll by setting overflow (but we'll do it via JS to avoid CSS)
         const originalOverflow = document.body.style.overflow;
         document.body.style.overflow = 'hidden';
@@ -80,6 +83,7 @@ export const ProjectModal = ({ isOpen, onClose, project }) => {
             window.removeEventListener('wheel', handleWheelEvent);
             window.removeEventListener('touchmove', handleTouchMoveEvent);
             document.removeEventListener('scroll', handleScrollEvent, { capture: true });
+            document.body.classList.remove('modal-open');
             document.body.style.overflow = originalOverflow;
         };
     }, [isOpen]);

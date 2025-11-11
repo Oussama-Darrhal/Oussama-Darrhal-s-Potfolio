@@ -33,6 +33,11 @@ section {
     scroll-snap-align: center;
     overflow: hidden;
 }
+body.modal-open .sidebar {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease-in-out;
+}
 @mixin mobile {
     @media (max-width: 738px) {
         @content;
