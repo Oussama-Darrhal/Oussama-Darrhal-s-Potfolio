@@ -1,3 +1,4 @@
+import { SpeedInsights } from "@vercel/speed-insights/react";
 import "./app.scss"
 import { Contact } from "./components/Contact/Contact";
 import { Cursor } from "./components/Cursor/Cursor";
@@ -24,6 +25,7 @@ const App = () => {
       <Portfolio />
       <section id="Contact"><Contact /></section>
       <Analytics />
+      <SpeedInsights />
     </div>
   </div>;
 };
