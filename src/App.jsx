@@ -6,6 +6,7 @@ import { NavBar } from "./components/NavBar/NavBar";
 import { Parallax } from "./components/Parallax/Parallax";
 import { Portfolio } from "./components/Portfolio/Portfolio";
 import { Services } from "./components/Services/Services";
+import { Analytics } from "@vercel/analytics/next"
 
 
 const App = () => {
@@ -23,6 +24,7 @@ const App = () => {
       <section id="Portfolio"><Parallax type="portfolio" /></section>
       <Portfolio />
       <section id="Contact"><Contact /></section>
+      <Analytics />
     </div>
   </div>;
 };
