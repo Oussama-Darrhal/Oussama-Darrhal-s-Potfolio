@@ -6,8 +6,7 @@ import { NavBar } from "./components/NavBar/NavBar";
 import { Parallax } from "./components/Parallax/Parallax";
 import { Portfolio } from "./components/Portfolio/Portfolio";
 import { Services } from "./components/Services/Services";
-import { Analytics } from "@vercel/analytics/next"
-
+import { Analytics } from "@vercel/analytics/react";
 
 const App = () => {
   return <div >
