@@ -64,7 +64,7 @@ export const Hero = () => {
                 {t('hero.marquee')}
             </motion.div>
             <div className="imageContainer">
-                <img src="/hero.png" alt="" />
+                <img src="/hero.webp" alt="" />
             </div>
         </div>
     )
